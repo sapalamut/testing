@@ -17,7 +17,7 @@ test('navigation', async ({ context }) => {
     await expect(response).toBeOK()
 
     // project selection
-    const projectName = await page.locator('[data-test="project-card-dlt-29"]').click()
+    const projectName = await page.locator('[data-test="project-card-2230"]').click()
     
     // assertion
     await expect(page).toHaveURL(new RegExp('/dashboard'))       
