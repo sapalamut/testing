@@ -33,12 +33,9 @@ test('navigation', async ({ context }) => {
     await newPage.locator('[data-test="left-panel-bar-widgets"]').click()
     
     // item drag & drop
-    await page.locator('uc-collapse-item', {hasText: "Essentials"}).getByRole('textbox', {name: "Title"}).hover()
-    await page.mouse.down();
-    await page.locator('.uc-content-layout').hover();
-    await page.mouse.up();
+    const iframe = newPage.frameLocator('.sc-dsAqUS') 
+    await newPage.locator('.uc-collapse-item', {hasText: "Essentials"}).locator('[data-test="widget-item-left-bar-widgets"]').first().dragTo(iframe.locator('.Layout__Content-sc-7bsglr-3'))
   });
-  
 
 
 
